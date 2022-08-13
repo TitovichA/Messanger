@@ -55,7 +55,7 @@ export const MessageList = () => {
     }
   }, [messageList]);
 
-  const AnimationTyping = (lastMessage) => {
+  const AnimationTyping = () => {
     if (value.length >= 1) {
       return (
         <div className={styles.isTyping}>
