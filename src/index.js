@@ -1,10 +1,12 @@
 import React from 'react';
 import ReactDOM from "react-dom/client";
+import { Provider } from "react-redux";
+import { store } from "./store";
 import { ThemeProvider, createTheme } from "@mui/material";
 import { Header } from "./components";
 import "./global.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { HomePage, Profile, ChatPage } from "./pages";
+import { HomePage, ProfilePage, ChatPage } from "./pages";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -17,17 +19,18 @@ const theme = createTheme({
 });
 
 root.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <ThemeProvider theme={theme}>
       <BrowserRouter>
         <Header />
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/profile" element={<Profile />} />
+          <Route path="/profile" element={<ProfilePage />} />
           <Route path="/chat/*" element={<ChatPage />} />
           <Route path="*" element={<h1>404</h1>} />
         </Routes>
+
       </BrowserRouter>
     </ThemeProvider>
-  </React.StrictMode>
+  </Provider>
 );
