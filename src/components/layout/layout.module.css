@@ -6,13 +6,6 @@
   flex-direction: column;
 }
 
-.header {
-  flex: none;
-  background-color: #17212b;
-  color: white;
-  border-bottom: 1px solid #000;
-}
-
 .content {
   display: flex;
   width: 100%;
@@ -26,7 +19,6 @@
   background-color: #17212b;
   border-right: 1px solid #000;
   color: white;
-  padding-top: 40px;
   box-sizing: border-box;
 }
 

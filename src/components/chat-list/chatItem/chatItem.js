@@ -1,29 +1,30 @@
-import React, { useState } from "react";
+import React from 'react';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
-import Box from '@mui/material/ListItemText';
 import { ChatIconStyled } from "./styles";
+import Box from '@mui/material/ListItemText';
+import { memo } from "react";
 
-export function ChatItem() {
 
-    const [contacts, setContacts] = useState([{ name: "Sam" }, { name: "Brendon" }, { name: "Marina" }
-    ]);
+export const ChatItem = memo(({ contact, selected }) => {
 
 
 
     return (
-
-        <Box>  {contacts.map((contact, index) => {
-            return (<ListItem contact={contact.name} key={index} component="div" disablePadding>
-                <ListItemButton>
-                <ChatIconStyled/>
-                    <ListItemText  primary={`${contact.name}`} />
+        <Box>
+            <ListItem component="div" disablePadding>
+                <ListItemButton
+                    selected={selected}
+                    
+                >
+                    <ChatIconStyled />
+                    <ListItemText primary={`${contact}`} />
                 </ListItemButton>
 
             </ListItem>
-            )})}
-                </Box>
-    );
-}
+        </Box>
+    )
+
+});
 
