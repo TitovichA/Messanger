@@ -17,7 +17,7 @@ export const MessageList = () => {
   const ref = useRef();
 
   const { roomId } = useParams();
-  const messages = messageList[roomId] ?? [];
+  const messages = messageList[roomId] ? messageList[roomId] : null;
 
 
 
@@ -27,7 +27,7 @@ export const MessageList = () => {
       setMessageList((state) => ({
         ...state,
         [roomId]: [
-          ...(state[roomId] ?? []), { message, author }],
+          ...(state[roomId] ? state[roomId] : null ), { message, author }],
       }));
       setValue("");
     }
@@ -50,7 +50,7 @@ export const MessageList = () => {
   }, [messageList]);
 
   useEffect(() => {
-    const messages = messageList[roomId] ?? [];
+    const messages = messageList[roomId] ? messageList[roomId] : null;
     const lastMessage = messages[messages.length - 1];
     let timerId = null;
 
