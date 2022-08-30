@@ -1,0 +1,20 @@
+.profilePage {
+    overflow-y: auto;
+    width: 100%;
+    height: 100%;
+    background-color: #17212b;
+    border-right: 1px solid #000;
+    color: white;
+    box-sizing: border-box;
+    text-align: center;
+    padding-top: 15px;
+}
+
+.profileTitle {
+    font-size: 30px;
+    padding-bottom: 15px;
+}
+
+.profileTop{
+   margin-bottom: 15px;
+}

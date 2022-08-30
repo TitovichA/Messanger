@@ -1,19 +1,26 @@
-import { PROFILENAME } from "./types";
+import { TOGGLE_VISIBLE_PROFILE, UPDATE_FORM } from "./types";
 
 
 const initialState = {
-  showName: false,
-  name: "Default",
+  firstName: "firstName",
+  lastName: "lastName",
+  phone: "phone",
+  isVisibleProfile: false,
 };
 
 export const profileReducer = (state = initialState, action) => {
   switch (action.type) {
-    case PROFILENAME:
+    case TOGGLE_VISIBLE_PROFILE:
       return {
         ...state,
-        showName: !state.showName,
+        isVisibleProfile: !state.isVisibleProfile,
       };
+
+    case UPDATE_FORM:
+      return { ...state, ...action.payload };
+
     default:
       return state;
   }
 };
+
