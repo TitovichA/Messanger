@@ -1,29 +1,24 @@
-import React, { useEffect } from 'react';
-import { MessageList, Layout, ChatList } from "../components";
-import { Routes, Route, useNavigate } from "react-router-dom";
 
+import React, { useEffect } from "react";
+import { Routes, Route, useNavigate } from "react-router-dom";
+import { MessageList, Layout, ChatList } from "../components";
 
 export const ChatPage = () => {
-  const navigation = useNavigate();
-
-
+  const navigate = useNavigate();
 
   useEffect(() => {
-
-    const listenerEsc = ({ code }) => {
+    const listener = ({ code }) => {
       if (code === "Escape") {
-        navigation("/chat");
+        navigate("/chat");
       }
-    }
+    };
 
-    document.addEventListener("keydown", listenerEsc)
+    document.addEventListener("keydown", listener);
 
     return () => {
-      document.removeEventListener("keydown", listenerEsc)
-    }
-
-  }, [navigation])
-
+      document.removeEventListener("keydown", listener);
+    };
+  }, [navigate]);
 
   return (
     <>
@@ -32,7 +27,7 @@ export const ChatPage = () => {
           path="/"
           element={
             <Layout
-              messages={<h1 style={{ color: "#fff" , textAlign: "center", marginTop: "150px", fontSize: "30px"}}>Выберите чат</h1>}
+              messages={<h1 style={{ color: "#fff" }}>Выберите чат</h1>}
               chats={<ChatList />}
             />
           }
