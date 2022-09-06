@@ -5,7 +5,7 @@ const initialState = {
   firstName: "firstName",
   lastName: "lastName",
   phone: "phone",
-  isVisibleProfile: false,
+  isVisibleProfile: true,
 };
 
 export const profileReducer = (state = initialState, action) => {

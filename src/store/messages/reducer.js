@@ -4,8 +4,7 @@ import { SEND_MESSAGE, DELETE_MESSAGE } from "./types";
 const initialState = {
   messages: {
     room1: [
-      { author: "User", message: "test", date: new Date(), id: nanoid() },
-      { author: "Bot", message: "test", date: new Date(), id: nanoid() },
+      { author: "Bot", message: "Hello", date: new Date(), id: nanoid() },
     ],
   },
 };

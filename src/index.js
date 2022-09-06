@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from "react-dom/client";
+import { PersistGate } from "redux-persist/integration/react";
 import { Provider } from "react-redux";
-import { store } from "./store";
+import { store, persistor  } from "./store";
 import { ThemeProvider, createTheme } from "@mui/material";
 import { Header } from "./components";
 import "./global.css";
@@ -20,6 +21,7 @@ const theme = createTheme({
 
 root.render(
   <Provider store={store}>
+    <PersistGate persistor={persistor}>
     <ThemeProvider theme={theme}>
       <BrowserRouter>
         <Header />
@@ -32,5 +34,6 @@ root.render(
 
       </BrowserRouter>
     </ThemeProvider>
+    </PersistGate>
   </Provider>
 );

@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { toggleVisibleProfile, updateForm } from "../../store/profile/actions";
 import styles from "./profileForm.module.css";
 import Button from '@mui/material/Button';
-import Input from '@mui/material/Input';
+
 
 
 export const ProfileForm = ({ firstName, lastName, phone }) => {
@@ -39,19 +39,19 @@ export const ProfileForm = ({ firstName, lastName, phone }) => {
 
 
             <div className={styles.inputProfile}>
-                <Input 
+                <input 
                     value={form.firstName}
                     placeholder="firstName"
                     data-name="firstName"
                     onChange={handleChangeForm}
                 />
-                <Input
+                <input
                     value={form.lastName}
                     placeholder="lastName"
                     data-name="lastName"
                     onChange={handleChangeForm}
                 />
-                <Input
+                <input
                     value={form.phone}
                     placeholder="phone"
                     data-name="phone"
