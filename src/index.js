@@ -7,7 +7,7 @@ import { ThemeProvider, createTheme } from "@mui/material";
 import { Header } from "./components";
 import "./global.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { HomePage, ProfilePage, ChatPage } from "./pages";
+import { HomePage, ProfilePage, ChatPage, GistsPage } from "./pages";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -29,6 +29,7 @@ root.render(
           <Route path="/" element={<HomePage />} />
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/chat/*" element={<ChatPage />} />
+          <Route path="/gists" element={<GistsPage />} />
           <Route path="*" element={<h1>404</h1>} />
         </Routes>
 
