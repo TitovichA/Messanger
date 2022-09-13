@@ -2,9 +2,13 @@
 import React, { useEffect } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import { MessageList, Layout, ChatList } from "../components";
+import { getConversations } from "../store/conversations";
+import { getMessages } from "../store/messages";
+import { useDispatch } from "react-redux";
 
 export const ChatPage = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const listener = ({ code }) => {
@@ -19,6 +23,11 @@ export const ChatPage = () => {
       document.removeEventListener("keydown", listener);
     };
   }, [navigate]);
+
+  useEffect(() => {
+    dispatch(getConversations());
+    dispatch(getMessages());
+  }, [dispatch]);
 
   return (
     <>

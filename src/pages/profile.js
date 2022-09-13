@@ -5,7 +5,7 @@ import { ProfileForm } from "../components/profile/profile-form.js";
 export const ProfilePage = () => {
 
   return (
-<ProfileForm/>
+    <ProfileForm />
   );
 };
 

@@ -1,5 +1,4 @@
-import React from 'react';
-import { useEffect } from "react";
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { getGists } from "../store/gists";
 import { getGistsByName } from "../store/gistsByName";
@@ -19,9 +18,7 @@ export const GistsPage = () => {
     }
   }, [dispatch, gists]);
 
-  if (error) {
-    return <h1>error ...</h1>;
-  }
+
 
   useEffect(() => {
     if (!gistsBySearch.length) {
@@ -33,7 +30,9 @@ export const GistsPage = () => {
     return <h1>error ...</h1>;
   }
 
-
+  if (error) {
+    return <h1>error ...</h1>;
+  }
 
   return (
     <div>

@@ -8,7 +8,7 @@ import React, {
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { InputAdornment } from "@mui/material";
-import { messagessSelector, sendMessageWithBot } from "../../store/messages";
+import { messagessSelector, sendMessageFb } from "../../store/messages";
 import { Message } from "./message";
 import { Input, SendIcon } from "./styles";
 
@@ -29,7 +29,7 @@ export const MessageList = () => {
   const send = useCallback(
     (message, author = "User") => {
       if (message) {
-        dispatch(sendMessageWithBot(roomId, { message, author }));
+        dispatch(sendMessageFb({ message, author },  roomId));
         setValue("");
       }
     },
